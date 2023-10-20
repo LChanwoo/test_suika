@@ -1394,7 +1394,8 @@ window.__require = function e(t, n, o) {
         }, t.prototype.ToEnd = function () {
           cc.find("Canvas").getComponent("MainGameJS").gameEnd1()
         }, t.prototype.PhysicsSystemCtrl = function (e, t) {
-          cc.director.getPhysicsManager().enabled = e, cc.director.getPhysicsManager().gravity = cc.v2(0, -300), t && (cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit), cc.director.getCollisionManager().enabled = e, cc.director.getCollisionManager().enabledDebugDraw = t
+          const randomGravity = - Math.random() * 1
+          cc.director.getPhysicsManager().enabled = e, cc.director.getPhysicsManager().gravity = cc.v2(0, 0), t && (cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit), cc.director.getCollisionManager().enabled = e, cc.director.getCollisionManager().enabledDebugDraw = t
         }, t.Instance = null, t.isShowAd = !1, t = n = c([u], t)
       }(cc.Component));
     n.default = d, cc._RF.pop()
