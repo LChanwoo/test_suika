@@ -89,30 +89,9 @@ window.boot = function() {
                 }
             }
             loadingNum++;
-            // if(loadingBool){
-            // 	var loadintT = document.getElementById("loadingText")
-            // }
-            // var percent = 100 * completedCount / totalCount;
-            // if(loadingBool && loadingNum >= 1){
-            // 	   console.log("dskpi",loadingNum);
-            // 	   loadintT.innerHTML = 'loading......' + parseInt(percent)  + '%';
-            // 	   if(percent.toFixed(0) >= 100){
-
-            // 		   loadingBool = false;
-            // 		   loadintT.remove();
-            // 	   }
-            // }
-            // loadingNum ++;
-
-            // var percent = 100 * completedCount / totalCount;
-            // if (progressBar) {
-            // progressBar.style.width = percent.toFixed(2) + '%';
-            // }
-
 
         };
         splash.style.display = 'block';
-        // progressBar.style.width = '0%';
 
         cc.director.once(cc.Director.EVENT_AFTER_SCENE_LAUNCH, function() {
             splash.style.display = 'none';
@@ -123,8 +102,8 @@ window.boot = function() {
 
         cc.loader.downloader._subpackages = settings.subpackages;
 
-        cc.view.enableRetina(true);
-        cc.view.resizeWithBrowserSize(true);
+         cc.view.enableRetina(true);
+         cc.view.resizeWithBrowserSize(true);
 
         if (!false && !false) {
 
@@ -138,13 +117,7 @@ window.boot = function() {
                 } else if (settings.orientation === 'portrait') {
                     cc.view.setOrientation(cc.macro.ORIENTATION_PORTRAIT);
                 }
-                // cc.view.enableAutoFullScreen([
-                //     cc.sys.BROWSER_TYPE_BAIDU,
-                //     cc.sys.BROWSER_TYPE_WECHAT,
-                //     cc.sys.BROWSER_TYPE_MOBILE_QQ,
-                //     cc.sys.BROWSER_TYPE_MIUI,
-                // ].indexOf(cc.sys.browserType) < 0);
-                cc.view.enableAutoFullScreen(false);
+                cc.view.enableAutoFullScreen(true);
             }
 
             // Limit downloading max concurrent task to 2,

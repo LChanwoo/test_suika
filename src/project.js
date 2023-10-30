@@ -659,7 +659,7 @@ window.__require = function e(t, n, o) {
             var u = 360 * Math.random() * Math.PI / 180,
               d = 60 + 80 * Math.random(),
               p = cc.v2(e.x + Math.sin(u) * d, e.y + Math.cos(u) * d);
-            c.runAction(cc.sequence(cc.spawn(cc.moveTo(.8, p).easing(cc.easeCircleActionOut()), cc.scaleTo(.8 * a.default.Random(.5, 1), 0).easing(cc.easeCircleActionIn())), cc.callFunc(function (e) {
+            c.runAction(cc.sequence(cc.spawn(cc.moveTo(8, p).easing(cc.easeCircleActionOut()), cc.scaleTo(.8 * a.default.Random(.5, 1), 0).easing(cc.easeCircleActionIn())), cc.callFunc(function (e) {
               i.default.Despawn("EffectSprite", e)
             }, this)))
           }
@@ -747,7 +747,7 @@ window.__require = function e(t, n, o) {
             var o = cc.instantiate(i.default.GetPrefab("LittleFly"));
             o.parent = this.bgEffectParent, o.position = e;
             var c = o.getComponent("RandomFly");
-            c.SetId(a.default.RandomInteger(1, 5)), c.fadeTicker = a.default.Random(2, 3.5), c.mosquitoSpeedLen = a.default.RandomInteger(6, 12), c.mosquitoSpeedMaxR = a.default.RandomInteger(6, 12), c.startFun()
+            c.SetId(a.default.RandomInteger(1, 5)), c.fadeTicker = a.default.Random(2, 3.5), c.mosquitoSpeedLen = a.default.RandomInteger(6, 12), c.mosquitoSpeedMaxR = a.default.RandomInteger(80, 90), c.startFun()
           }
         }, t.prototype.JuiceBoom = function (e, t) {
           for (var n = 0; n < 6; n++) {
@@ -819,7 +819,7 @@ window.__require = function e(t, n, o) {
             Math.floor(20 * a.default.Random(.4, 1.5));
             64, c.SetSprite(s, cc.v2(64, 64)), c.node.scale = a.default.Random(.3, 1.6);
             var l = cc.v2(0, 1);
-            l.rotateSelf(a.default.AngleToRadian(360 * Math.random()));
+            l.rotateSelf(a.default.AngleToRadian(36000 * Math.random()));
             var u = a.default.Random(20, t);
             c.node.position.add(l.mul(a.default.Random(0, 30)));
             var d = a.default.Random(.9, 1.2),
@@ -1033,7 +1033,7 @@ window.__require = function e(t, n, o) {
         }, t.prototype.ShowFailedUi = function (e, t) {
           var n = this;
           this.scheduleOnce(function () {
-            r.default.Instance.HideScorePanel(), n.levelTxt.string = r.default.Instance.level.toString(), n.scoreLabel.string = s.default.score.toString(), n.highScoreLabel.string = t, n.resultTxt.string = n.GetContentByScore(e), n.overTxt.string = "\u5f53\u524d\u5173\u5361\u5df2\u5b8c\u6210" + Math.floor(r.default.Instance.nowYQ / r.default.Instance.passlevelYQ * 100) + "%", n.canClick = !1, n.levelTxt.string = e, n.bgMask.runAction(cc.fadeTo(.36, 150)), n.scheduleOnce(function () {
+            r.default.Instance.HideScorePanel(), n.levelTxt.string = r.default.Instance.level.toString(), n.scoreLabel.string = s.default.score.toString(), n.highScoreLabel.string = t, n.resultTxt.string = n.GetContentByScore(e), n.overTxt.string = "test10" + Math.floor(r.default.Instance.nowYQ / r.default.Instance.passlevelYQ * 100) + "%", n.canClick = !1, n.levelTxt.string = e, n.bgMask.runAction(cc.fadeTo(.36, 150)), n.scheduleOnce(function () {
               i.default.CenteredUi(10, this.di, this.levelTxt.node, this.guan), this.failedUiBox.y = cc.winSize.height / 2 + this.failedUiBox.height / 2, this.failedUiBox.runAction(cc.sequence(cc.moveTo(.36, this.failedBoxPos).easing(cc.easeBackOut()), cc.callFunc(function () {
                 this.clickMask.on(cc.Node.EventType.TOUCH_START, this.OnClickCloseMask, this), this.moreGameBtn.on(cc.Node.EventType.TOUCH_START, this.OnClickMoreGame, this), this.continueTip.opacity = 0, this.continueTip.runAction(cc.repeatForever(cc.sequence(cc.fadeIn(.5), cc.delayTime(.5), cc.fadeOut(.5)))), this.canClick = !0
               }, this)))
@@ -1053,7 +1053,7 @@ window.__require = function e(t, n, o) {
           var t = Math.ceil(e / 1500 * 94);
           t > 94 && (t = 94);
           var n = 5 + t;
-          return "\u51fb\u8d25\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", ["\u51fb\u8d25\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", "\u64ca\u6557\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", "Beat " + n + " % of global players", "\uc804 \uc138\uacc4" + n + "% \uc758 \uc720 \uc800 \ub97c \uc774 \uacbc \uc2b5 \ub2c8 \ub2e4"][i.default.returnCurrentLanType() - 1]
+          return "test11" + n + "%test22", ["test33" + n + "%test44", "test55" + n + "%test66", "Beat " + n + " % of global players", "엣...?" + n + "% 의 플레이어를 이겼...다고??"][i.default.returnCurrentLanType() - 1]
         }, t.Instance = null, c([d(cc.Node)], t.prototype, "clickMask", void 0), c([d(cc.Node)], t.prototype, "failedUiBox", void 0), c([d(cc.Node)], t.prototype, "di", void 0), c([d(cc.Label)], t.prototype, "levelTxt", void 0), c([d(cc.Node)], t.prototype, "guan", void 0), c([d(cc.Node)], t.prototype, "continueTip", void 0), c([d(cc.Label)], t.prototype, "scoreLabel", void 0), c([d(cc.Node)], t.prototype, "highScoreNode", void 0), c([d(cc.Node)], t.prototype, "highScore", void 0), c([d(cc.Label)], t.prototype, "highScoreLabel", void 0), c([d(cc.Label)], t.prototype, "resultTxt", void 0), c([d(cc.Label)], t.prototype, "overTxt", void 0), c([d(cc.Node)], t.prototype, "moreGameBtn", void 0), c([d(cc.Node)], t.prototype, "reStartBtn", void 0), c([d(cc.Vec2)], t.prototype, "failedBoxPos", void 0), c([d], t.prototype, "standardScore", void 0), c([d(cc.Node)], t.prototype, "bgMask", void 0), c([d(cc.Node)], t.prototype, "bencichengji", void 0), c([d(cc.SpriteFrame)], t.prototype, "bencichengjiarr", void 0), c([d(cc.Node)], t.prototype, "gengduoyouxi", void 0), c([d(cc.SpriteFrame)], t.prototype, "gengduoyouxiarr", void 0), c([d(cc.Node)], t.prototype, "adsButton2", void 0), c([d(cc.Node)], t.prototype, "bannerButton", void 0), t = n = c([u], t)
       }(cc.Component);
     n.default = p, cc._RF.pop()
@@ -1224,7 +1224,7 @@ window.__require = function e(t, n, o) {
             }).start()
           }, t.prototype.createLevelUpFruit = function (e, t) {
           var o = cc.instantiate(this.fruitPre);
-          o.parent = this.fruitNode, o.getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], o.children[0].getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], o.getComponent("fruitData").fruitNumber = e, o.position = t, o.scale = 0, o.getComponent(cc.RigidBody).linearVelocity = cc.v2(0, -100), o.getComponent(cc.PhysicsCircleCollider).radius = o.height / 2, o.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(o).to(.5, {
+          o.parent = this.fruitNode, o.getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], o.children[0].getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], o.getComponent("fruitData").fruitNumber = e, o.position = t, o.scale = 0, o.getComponent(cc.RigidBody).linearVelocity = cc.v2(-400, -500), o.getComponent(cc.PhysicsCircleCollider).radius = o.height / 2, o.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(o).to(.5, {
             scale: 1
           }, {
             easing: "backOut"
@@ -1395,7 +1395,7 @@ window.__require = function e(t, n, o) {
           cc.find("Canvas").getComponent("MainGameJS").gameEnd1()
         }, t.prototype.PhysicsSystemCtrl = function (e, t) {
           const randomGravity = - Math.random() * 1
-          cc.director.getPhysicsManager().enabled = e, cc.director.getPhysicsManager().gravity = cc.v2(0, 0), t && (cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit), cc.director.getCollisionManager().enabled = e, cc.director.getCollisionManager().enabledDebugDraw = t
+          cc.director.getPhysicsManager().enabled = e, cc.director.getPhysicsManager().gravity = cc.v2(0, 2), t && (cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit), cc.director.getCollisionManager().enabled = e, cc.director.getCollisionManager().enabledDebugDraw = t
         }, t.Instance = null, t.isShowAd = !1, t = n = c([u], t)
       }(cc.Component));
     n.default = d, cc._RF.pop()
@@ -1900,7 +1900,7 @@ window.__require = function e(t, n, o) {
       gameEnd1: function () {
         var e = this,
           t = this.returnCurrentLanType();
-        1 == t ? (this.gameOverT1.string = "\u6e38 \u620f \u7ed3 \u675f", this.gameOverT2.string = "\u70b9 \u51fb \u67e5 \u770b \u5206 \u6570") : 2 == t ? (this.gameOverT1.string = "\u904a \u6232 \u7d50 \u675f", this.gameOverT2.string = "\u9ede \u64ca \u67e5 \u770b \u5206 \u6578") : 4 == t ? (this.gameOverT1.string = "\uac8c\uc784 \uc885\ub8cc", this.gameOverT2.string = "\ud074\ub9ad \ud558\uc5ec \uc810\uc218 \ubcf4\uae30") : (this.gameOverT1.string = "Game Over", this.gameOverT2.string = "Click to view the score"), this.gameOveEndBool = !0, this.gameOverT1.node.zIndex = 999, this.gameOverT2.node.zIndex = 999, this.gameOverToEnd.zIndex = 999, this.gameOverT1.node.opacity = 0, this.gameOverT1.node.y = 100, this.gameOverToEnd.y = 0, this.gameOverT1.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverToEnd.runAction(cc.sequence(cc.fadeTo(1, 100), cc.callFunc(function () {
+        1 == t ? (this.gameOverT1.string = "끝났어요1", this.gameOverT2.string = "끝났어요12") : 2 == t ? (this.gameOverT1.string = "끝났어요14", this.gameOverT2.string = "끝이야") : 4 == t ? (this.gameOverT1.string = "게임오버!!!", this.gameOverT2.string = "당신은졌습니닿ㅎㅎㅎㅎ\n졌어욯ㅎㅎㅎㅎㅎ\n그럼 어디 점수나볼까요???ㅎㅎㅎㅎㅎㅎ") : (this.gameOverT1.string = "Game Over", this.gameOverT2.string = "Click to view the score"), this.gameOveEndBool = !0, this.gameOverT1.node.zIndex = 999, this.gameOverT2.node.zIndex = 999, this.gameOverToEnd.zIndex = 999, this.gameOverT1.node.opacity = 0, this.gameOverT1.node.y = 100, this.gameOverToEnd.y = 0, this.gameOverT1.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverToEnd.runAction(cc.sequence(cc.fadeTo(1, 100), cc.callFunc(function () {
           e.gameOverToEnd.getComponent(cc.Button).enabled = !0
         }))), this.gameOverT2.node.opacity = 0, this.gameOverT2.node.y = this.gameOverT1.node.y - 100, this.gameOverT2.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverT2.node.runAction(cc.sequence(cc.delayTime(2), cc.scaleTo(.3, 1.2).easing(cc.easeSineInOut()), cc.scaleTo(.3, 1).easing(cc.easeSineInOut()))).repeatForever()
       },
@@ -3837,7 +3837,7 @@ window.__require = function e(t, n, o) {
       h = function (e) {
         function t() {
           var t = null !== e && e.apply(this, arguments) || this;
-          return t.shellNode = null, t.player = null, t.shootInter = 2, t.shootTime = 0, t.cannonNumber = 0, t.peaSuiPre = null, t
+          return t.shellNode = null, t.player = null, t.shootInter = 1, t.shootTime = 0, t.cannonNumber = 0, t.peaSuiPre = null, t
         }
 
         return o(t, e), t.prototype.start = function () {
